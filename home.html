@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fracctal TCG Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img src="assets/Fracctal_TCG_Logo.png" class="logo" alt="Fracctal TCG Logo" />
+
+  <div class="overlay">
+    <div class="title">WELCOME TO FRACCTAL TCG</div>
+    <div class="subtitle">Fracctal TCG is a competitive digital trading card game. Play. Earn. Evolve.</div>
+    <div class="buttons">
+      <a href="https://discord.gg/fracctal" target="_blank">Join Discord</a>
+      <a href="https://store.steampowered.com/app/2992340/Fracctal_Monsters/" target="_blank">Wishlist</a>
+      <a href="https://fracctalmonstersnft.com/marketplace" target="_blank">Marketplace</a>
+    </div>
+    <div class="hero-card-preview">
+      <div class="card-preview" style="background-image: url('assets/cards/devastor.png'); background-size: cover;"></div>
+      <div class="card-preview" style="background-image: url('assets/cards/dofurious.png'); background-size: cover;"></div>
+      <div class="card-preview" style="background-image: url('assets/cards/zargon.png'); background-size: cover;"></div>
+      <div class="card-preview" style="background-image: url('assets/cards/zenphire.png'); background-size: cover;"></div>
+      <div class="card-preview" style="background-image: url('assets/cards/lizorus.png'); background-size: cover;"></div>
+    </div>
+
+
+      <div class="coming-soon-section">
+        <div class="coming-soon-title">Coming Soon</div>
+        <div class="platforms">
+          <div class="platform">
+            <img src="assets/platforms/steam.webp" alt="Steam" />
+          </div>
+          <div class="platform">
+            <img src="assets/platforms/apple-app-store.webp" alt="iOS" />
+          </div>
+          <div class="platform">
+            <img src="assets/platforms/google-play.webp" alt="Google Play" />
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="card-strip" id="cardStrip"></div>
+
+  <script>
+    const strip = document.getElementById("cardStrip");
+
+    fetch("assets/cards.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const cardImages = data.cards;
+        const cols = 40;
+        const rows = 40;
+
+        for (let i = 0; i < cols * rows; i++) {
+          const card = document.createElement("div");
+          card.className = "card";
+          const img = cardImages[Math.floor(Math.random() * cardImages.length)];
+          card.style.backgroundImage = `url("assets/cards/${img}.png")`;
+          strip.appendChild(card);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load cards.json:", err);
+      });
+  </script>
+</body>
+</html>
