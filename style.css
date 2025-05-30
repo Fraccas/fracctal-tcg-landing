@@ -5,13 +5,15 @@
 }
 
 body {
-  height: 100vh;
   font-family: 'Bubblegum Sans', cursive;
   color: white;
   overflow: hidden;
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .background-glow {
@@ -20,9 +22,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top center, rgba(46, 145, 252, 0.45) 0%, rgba(0, 0, 0, 0.8) 80%);
   z-index: 2;
   pointer-events: none;
+  min-height: 100vh;
+  background: radial-gradient(circle at top center, rgba(46, 145, 252, 0.5) 0%, rgba(0, 0, 0, 0.85) 90%);
 }
 
 .background-glow::after {
@@ -75,17 +78,37 @@ body {
 }
 
 .buttons a {
-  padding: 12px 24px;
-  border-radius: 8px;
-  background: #00bcd4;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #00bcd4, #0097a7);
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+}
+
+.buttons a:hover::before {
+  left: 125%;
 }
 
 .buttons a:hover {
-  background: #0097a7;
+  background: linear-gradient(145deg, #0097a7, #00bcd4);
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .hero-card-preview {
