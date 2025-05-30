@@ -7,6 +7,7 @@
 body {
   font-family: 'Bubblegum Sans', cursive;
   color: white;
+  background-color: black;
   overflow: hidden;
   position: relative;
   margin: 0;
@@ -111,48 +112,78 @@ body {
   box-shadow: 0 0 15px rgba(0, 188, 212, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-.hero-card-preview {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hero-card-preview .card-preview {
-  width: 120px;
-  height: 180px;
-  background: linear-gradient(145deg, #444, #222);
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.3);
-  border: 1px solid #333;
-}
-
-.card-preview {
-  position: relative;
+.trailer-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   overflow: hidden;
 }
 
-.card-preview::before {
+
+.hero-card-preview {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-preview {
+  width: 117px;
+  height: 163px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 0 40px rgba(0, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: holoShimmer 6s infinite linear;
+  transition: transform 0.3s ease;
+}
+
+.card-preview:hover {
+  transform: scale(1.05);
+}
+
+.card-preview::after {
   content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.05) 100%);
+  background: linear-gradient(115deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 60%);
   transform: rotate(25deg);
-  animation: holo-glow 3s infinite;
+  animation: holoGlint 4s linear infinite;
   pointer-events: none;
 }
 
-@keyframes holo-glow {
-  0% { transform: translate(-100%, -100%) rotate(25deg); }
-  100% { transform: translate(100%, 100%) rotate(25deg); }
+@keyframes holoGlint {
+  0% {
+    transform: rotate(25deg) translate(-100%, -100%);
+  }
+  100% {
+    transform: rotate(25deg) translate(100%, 100%);
+  }
+}
+
+@keyframes holoShimmer {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(35deg);
+  }
 }
 
 
 .card-strip {
-  position: absolute;
+  position: fixed;
   width: 400vw;
   height: 400vh;
   top: -200vh;
