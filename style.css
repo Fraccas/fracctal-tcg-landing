@@ -343,6 +343,10 @@ body {
   box-shadow: 0 0 15px #00ffea;
 }
 
+.wishlist-text {
+  font-size: 28px;
+}
+
 .steam-icon {
   height: 28px;
   vertical-align: middle;
