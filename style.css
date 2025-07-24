@@ -258,42 +258,99 @@ body {
   }
 }
 
-.platforms {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
-.platform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #ddd;
-  font-size: 0.9rem;
-}
-
-.coming-soon-section {
+.play-section {
   text-align: center;
   margin-top: 30px;
   z-index: 10;
   position: relative;
 }
 
-.coming-soon-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+.play-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 12px;
 }
 
-.platform img {
-  width: 60px;
-  height: auto;
-  margin-bottom: 6px;
-  filter: none;
+
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
+
+.platform-button {
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.platform-button img {
+  width: 90px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.platform-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 255, 200, 0.4);
+  border-radius: 20px;
+}
+
+
+
+
+.wishlist-banner {
+  background: linear-gradient(to right, #00fcd3, #00d0ff);
+  padding: 18px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+  /* Make the anchor tag fill the banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.wishlist-banner a {
+  all: unset; /* Reset anchor default styles */
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 28px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+.wishlist-banner:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffea;
+}
+
+.steam-icon {
+  height: 28px;
+  vertical-align: middle;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+
+
 
 
 

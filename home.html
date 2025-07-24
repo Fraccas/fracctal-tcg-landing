@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fracctal TCG Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Ads Global site tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-XXXXXXX');
+  </script>
+
 </head>
+
 <body>
+  <a href="https://store.steampowered.com/app/3752950/Fracctal_TCG/" target="_blank"
+    aria-label="Wishlist Fracctal TCG on Steam"
+    onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXX/XXXXXXXXXXXXXXX'})">
+    <div class="wishlist-banner">
+      <img src="assets/platforms/steam.webp" alt="Steam Logo" class="steam-icon" />
+      WISHLIST ON STEAM
+    </div>
+  </a>
+
   <div class="background-glow"></div>
-  <img src="assets/Fracctal_TCG_Logo.webp" class="logo" alt="Fracctal TCG Logo" />
+  <img src="assets/Fracctal_TCG_Logo.webp" style="margin-top: 55px;" class="logo" alt="Fracctal TCG Logo" />
   <div class="overlay">
     <div class="title">BUILD. BATTLE. EVOLVE.</div>
-    <div class="subtitle">Enter the world of Fracctal TCG — a free-to-play card battler where every decision matters and every victory counts. Master your deck, earn real rewards, and rise to the top.</div>
+    <div class="subtitle">Enter the world of Fracctal TCG — a free-to-play card battler where every decision matters and
+      every victory counts. Master your deck, earn real rewards, and rise to the top.</div>
 
     <div class="trailer-container">
-      <iframe 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/FNYb5iLhEB0?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" 
-        title="Fracctal TCG Trailer" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/FNYb5iLhEB0?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1"
+        title="Fracctal TCG Trailer" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
 
-      </div>
+    </div>
 
     <div class="buttons">
       <a href="https://discord.gg/fracctal" target="_blank">DISCORD</a>
@@ -42,20 +62,25 @@
     </div> -->
 
 
-      <div class="coming-soon-section">
-        <div class="coming-soon-title">COMING SOON</div>
-        <div class="platforms">
-          <div class="platform">
-            <img src="assets/platforms/steam.webp" alt="Steam" />
-          </div>
-          <div class="platform">
-            <img src="assets/platforms/apple-app-store.webp" alt="iOS" />
-          </div>
-          <div class="platform">
-            <img src="assets/platforms/google-play.webp" alt="Google Play" />
-          </div>
-        </div>
+    <div class="play-section">
+      <div class="play-title">Play Test Now!</div>
+      <div class="platforms">
+        <a href="https://store.steampowered.com/app/3752950/Fracctal_TCG/" target="_blank" class="platform-button"
+          onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXX/XXXXXXXXXXXXXXX'})">
+          <img src="assets/platforms/steam.webp" alt="Steam" />
+        </a>
+
+        <a href="https://testflight.apple.com/join/rGegPwKA" target="_blank" class="platform-button">
+          <img src="assets/platforms/apple-app-store.webp" alt="iOS/macOS" />
+        </a>
+        <a href="https://play.google.com/apps/testing/com.fracctallabs.fracctaltcg" target="_blank"
+          class="platform-button">
+          <img src="assets/platforms/google-play.webp" alt="Google Play" />
+        </a>
       </div>
+    </div>
+
+
   </div>
 
   <div class="card-strip" id="cardStrip"></div>
@@ -82,5 +107,7 @@
         console.error("Failed to load cards.json:", err);
       });
   </script>
+
 </body>
+
 </html>
