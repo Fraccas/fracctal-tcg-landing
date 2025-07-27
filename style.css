@@ -33,7 +33,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.7) 100%);
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.7) 100%);
   z-index: 3;
 }
 
@@ -73,15 +73,20 @@ body {
 }
 
 @keyframes gradientSlide {
-  0% { background-position: 0% }
-  100% { background-position: 200% }
+  0% {
+    background-position: 0%
+  }
+
+  100% {
+    background-position: 200%
+  }
 }
 
 
 .subtitle {
   font-size: 1.4rem;
   color: #ddd;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   margin: 15px 0 35px;
   line-height: 1.4;
   font-weight: 500;
@@ -178,7 +183,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(115deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 60%);
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.1) 60%);
   transform: rotate(25deg);
   animation: holoGlint 4s linear infinite;
   pointer-events: none;
@@ -188,6 +193,7 @@ body {
   0% {
     transform: rotate(25deg) translate(-100%, -100%);
   }
+
   100% {
     transform: rotate(25deg) translate(100%, 100%);
   }
@@ -197,6 +203,7 @@ body {
   0% {
     filter: hue-rotate(0deg);
   }
+
   100% {
     filter: hue-rotate(35deg);
   }
@@ -222,16 +229,18 @@ body {
   border-radius: 14px;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes scrollBackground {
   0% {
     transform: translate(0, 0) rotate(45deg);
   }
+
   50% {
     transform: translate(50vw, -50vh) rotate(45deg);
   }
+
   100% {
     transform: translate(100vw, -100vh) rotate(45deg);
   }
@@ -241,17 +250,21 @@ body {
   .title {
     font-size: 2rem;
   }
+
   .subtitle {
     font-size: 1rem;
   }
+
   .buttons {
     flex-direction: column;
     align-items: center;
   }
+
   .buttons a {
     width: 80%;
     text-align: center;
   }
+
   .hero-card-preview .card-preview {
     width: 90px;
     height: 130px;
@@ -327,7 +340,8 @@ body {
 }
 
 .wishlist-banner a {
-  all: unset; /* Reset anchor default styles */
+  all: unset;
+  /* Reset anchor default styles */
   font-family: 'Luckiest Guy', cursive;
   font-size: 28px;
   color: #fff;
@@ -355,6 +369,27 @@ body {
 
 
 
+.steam-widget-container {
+  position: relative;
+  width: 100%;
+  max-width: 646px;
+  aspect-ratio: 646 / 190;
+  margin: 0 auto;
+  margin-top: 55px;
+}
 
+.steam-widget-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-
+.steam-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: block;
+}
